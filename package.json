@@ -6,10 +6,20 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "babel-relay-plugin": "^0.8.0",
+    "moment": "^2.13.0",
+    "parse": "^1.8.3",
     "react": "^0.14.8",
     "react-native": "^0.23.1",
     "react-native-chart": "^0.1.14",
     "react-native-charts": "^2.0.3",
-    "react-native-circular-progress": "0.0.6"
+    "react-native-circular-progress": "0.0.6",
+    "react-native-fbsdk": "^0.1.0",
+    "react-native-linear-gradient": "^1.5.4",
+    "react-native-share": "^1.0.9",
+    "react-redux": "^4.4.5",
+    "react-relay": "^0.8.0",
+    "redux": "^3.5.2",
+    "reselect": "^2.5.1"
   }
 }

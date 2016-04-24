@@ -43,7 +43,6 @@ var {
   skipPushNotifications,
   TEST_MENU,
 } = require('../../actions');
-var {testMenuEnabled, version} = require('../../env');
 
 var { createSelector } = require('reselect');
 

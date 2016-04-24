@@ -32,7 +32,6 @@ var React = require('React');
 var Platform = require('Platform');
 var F8DrawerLayout = require('F8DrawerLayout');
 var ScheduleListView = require('./ScheduleListView');
-var FilterScreen = require('../../filter/FilterScreen');
 
 var { connect } = require('react-redux');
 var {switchDay} = require('../../actions');

@@ -77,7 +77,7 @@ class MyScheduleView extends React.Component {
 
   render() {
     var rightItem;
-    if (this.props.user.isLoggedIn) {
+    if (true) {
       rightItem = {
         title: 'Settings',
         icon: require('./img/settings.png'),
@@ -85,7 +85,7 @@ class MyScheduleView extends React.Component {
       };
     }
 
-    const profilePicture = this.props.user.isLoggedIn &&
+    const profilePicture = true &&
       <ProfilePicture userID={this.props.user.id} size={100} />;
 
     return (
@@ -102,7 +102,7 @@ class MyScheduleView extends React.Component {
   }
 
   renderContent() {
-    if (!this.props.user.isLoggedIn) {
+    if (!true) {
       return (
         <PureListView
           renderEmptyList={this.renderNotLoggedIn}

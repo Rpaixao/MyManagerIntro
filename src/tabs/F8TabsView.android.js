@@ -96,12 +96,12 @@ class F8TabsView extends React.Component {
       : require('./schedule/img/schedule-icon-2-active.png');
     var accountItem, myF8Item, loginItem;
 
-    if (this.props.user.isLoggedIn) {
-      var name = this.props.user.name || '';
+    if (true) {
+      var name = 'Ruben' || '';
       accountItem = (
         <View>
           <TouchableOpacity onPress={this.openProfileSettings}>
-            <ProfilePicture userID={this.props.user.id} size={80} />
+            <ProfilePicture userID='rpaixao' size={80} />
           </TouchableOpacity>
           <Text style={styles.name}>
             {name.toUpperCase()}
@@ -180,28 +180,19 @@ class F8TabsView extends React.Component {
   renderContent() {
     switch (this.props.tab) {
       case 'schedule':
-        return (
-          <GeneralScheduleView
-            navigator={this.props.navigator}
-          />
-        );
+        return <View style={{backgroundColor: 'brown', flex: 1}}><Text>schedule</Text></View>;
 
       case 'my-schedule':
-        return (
-          <MyScheduleView
-            navigator={this.props.navigator}
-            onJumpToSchedule={() => this.props.onTabSelect('schedule')}
-          />
-        );
+        return <View style={{backgroundColor: 'orange', flex: 1}}><Text>My schedule</Text></View>;
 
       case 'map':
-        return <F8MapView />;
+        return <View style={{backgroundColor: 'red', flex: 1}}><Text>Map</Text></View>;
 
       case 'notifications':
-        return <F8NotificationsView navigator={this.props.navigator} />;
+        return <View style={{backgroundColor: 'yellow', flex: 1}}><Text>Notific</Text></View>;
 
       case 'info':
-        return <F8InfoView navigator={this.props.navigator} />;
+        return <View style={{backgroundColor: 'blue', flex: 1}}><Text>Info</Text></View>;
     }
     throw new Error(`Unknown tab ${this.props.tab}`);
   }
@@ -225,15 +216,6 @@ F8TabsView.childContextTypes = {
   openDrawer: React.PropTypes.func,
   hasUnreadNotifications: React.PropTypes.number,
 };
-
-function select(store) {
-  return {
-    tab: store.navigation.tab,
-    day: store.navigation.day,
-    user: store.user,
-    notificationsBadge: unseenNotificationsCount(store) + store.surveys.length,
-  };
-}
 
 function actions(dispatch) {
   return {
@@ -272,4 +254,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = connect(select, actions)(F8TabsView);
+module.exports = F8TabsView;
